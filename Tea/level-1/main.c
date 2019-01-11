@@ -107,6 +107,9 @@ int main()
     bool success = false;
     char flag[33];
     memset(flag, 0, sizeof(flag));//清空字符串
+    setbuf(stdin,0);
+    setbuf(stdout,0);
+    setbuf(stderr,0);
 
     printf("Please input you flag:");
     flagLen = getStr(flag,32);
