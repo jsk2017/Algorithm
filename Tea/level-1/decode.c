@@ -41,7 +41,7 @@ int main()
     flagLong[0] = 0x67d7b805;
     flagLong[1] = 0x63c174c3;
     decrypt(flagLong,k);
-    printf("flag{%x-%x}\n",flagLong[0],flagLong[1]);
+    printf("flag{%X-%.08X}\n",flagLong[0],flagLong[1]);
 
     return 0;
 }
