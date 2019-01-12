@@ -4,44 +4,31 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define DELTA 0x9e3779b9
-#define MX (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (key[(p&3)^e] ^ z)))
-  
-void btea(uint32_t *v, int n, uint32_t const key[4]) {
-    uint32_t y, z, sum;
-    unsigned p, rounds, e;
-    if (n > 1) {          /* Coding Part */
-        rounds = 6 + 52/n;
-        sum = 0;
-        z = v[n-1];
-        do {
-        sum += DELTA;
-        e = (sum >> 2) & 3;
-        for (p=0; p<n-1; p++) {
-            y = v[p+1]; 
-            z = v[p] += MX;
-        }
-        y = v[0];
-        z = v[n-1] += MX;
-        } while (--rounds);
-    } else if (n < -1) {  /* Decoding Part */
-        n = -n;
-        rounds = 6 + 52/n;
-        sum = rounds*DELTA;
-        y = v[0];
-        do {
-        e = (sum >> 2) & 3;
-        for (p=n-1; p>0; p--) {
-            z = v[p-1];
-            y = v[p] -= MX;
-        }
-        z = v[n-1];
-        y = v[0] -= MX;
-        sum -= DELTA;
-        } while (--rounds);
-    }
+//加密函数
+void encrypt (uint32_t* v, uint32_t* k) {
+    uint32_t v0=v[0], v1=v[1], sum=0, i;           /* set up */
+    uint32_t delta=0x9e3779b9;                     /* a key schedule constant */
+    uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];   /* cache key */
+    for (i=0; i < 32; i++) {                       /* basic cycle start */
+        sum += delta;
+        v0 += ((v1<<4) + k0) ^ (v1 + sum) ^ ((v1>>5) + k1);
+        v1 += ((v0<<4) + k2) ^ (v0 + sum) ^ ((v0>>5) + k3);
+    }                                              /* end cycle */
+    v[0]=v0; v[1]=v1;
 }
 
+//解密函数
+void decrypt (uint32_t* v, uint32_t* k) {
+    uint32_t v0=v[0], v1=v[1], sum=0xC6EF3720, i;  /* set up */
+    uint32_t delta=0x9e3779b9;                     /* a key schedule constant */
+    uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];   /* cache key */
+    for (i=0; i<32; i++) {                         /* basic cycle start */
+        v1 -= ((v0<<4) + k2) ^ (v0 + sum) ^ ((v0>>5) + k3);
+        v0 -= ((v1<<4) + k0) ^ (v1 + sum) ^ ((v1>>5) + k1);
+        sum -= delta;
+    }                                              /* end cycle */
+    v[0]=v0; v[1]=v1;
+}
 
 int getStr(char *buffer,int maxLen){
     char c;  // 读取到的一个字符
@@ -162,20 +149,20 @@ int main()
     uint32_t flagLong[2];
     flagLong[0] = (uint32_t)htoi((char *)v1);
     flagLong[1] = (uint32_t)htoi((char *)v2);
-    // flagLong[2] = (uint32_t)htoi("12345678");
     // printf("%d",sizeof(int));  4 byte == 32 bit
     
-    // printf("加密前原始数据：%x %x %x\n",flagLong[0],flagLong[1],flagLong[2]);
-    btea(flagLong,2, k);
-    // printf("加密后的数据：%x %x %x\n",flagLong[0],flagLong[1],flagLong[2]);
+    // printf("加密前原始数据：%x %x\n",flagLong[0],flagLong[1]);
+    encrypt(flagLong, k);
+    // printf("加密后的数据：%x %x\n",flagLong[0],flagLong[1]);
+
     // check flag
     uint8_t check_enc[4];
     uint8_t check_index[4] = {3,1,0,2};
     uint8_t i=0;
-    check_enc[0] = 0x57;
-    check_enc[1] = 0x8b;
-    check_enc[2] = 0x36;
-    check_enc[3] = 0x9b;
+    check_enc[0] = 0x5;
+    check_enc[1] = 0xd7;
+    check_enc[2] = 0xb8;
+    check_enc[3] = 0x67;
     for(i=0;i<4;i++){
         uint8_t t = (uint8_t)(flagLong[0]>>(8*i));
         // printf("%x\t",t);
@@ -184,8 +171,8 @@ int main()
         }
     }
 
-    char check_enc_last[9] = "6b45a63b";
-    // snprintf(check_enc_last,9,"%x",flagLong[1]);//b36a54b6
+    char check_enc_last[9] = "3c471c36";
+    // snprintf(check_enc_last,9,"%x",flagLong[1]);//63c174c3
     reverse(check_enc_last,0,7);
     uint32_t enc_hex = htoi(check_enc_last);
 
@@ -198,7 +185,5 @@ int main()
     }else{
         printf("You Win!\n");
     }
-
-    
     return 0;
 }

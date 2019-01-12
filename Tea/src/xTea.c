@@ -4,42 +4,28 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define DELTA 0x9e3779b9
-#define MX (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (key[(p&3)^e] ^ z)))
-  
-void btea(uint32_t *v, int n, uint32_t const key[4]) {
-    uint32_t y, z, sum;
-    unsigned p, rounds, e;
-    if (n > 1) {          /* Coding Part */
-        rounds = 6 + 52/n;
-        sum = 0;
-        z = v[n-1];
-        do {
-        sum += DELTA;
-        e = (sum >> 2) & 3;
-        for (p=0; p<n-1; p++) {
-            y = v[p+1]; 
-            z = v[p] += MX;
-        }
-        y = v[0];
-        z = v[n-1] += MX;
-        } while (--rounds);
-    } else if (n < -1) {  /* Decoding Part */
-        n = -n;
-        rounds = 6 + 52/n;
-        sum = rounds*DELTA;
-        y = v[0];
-        do {
-        e = (sum >> 2) & 3;
-        for (p=n-1; p>0; p--) {
-            z = v[p-1];
-            y = v[p] -= MX;
-        }
-        z = v[n-1];
-        y = v[0] -= MX;
-        sum -= DELTA;
-        } while (--rounds);
+/* take 64 bits of data in v[0] and v[1] and 128 bits of key[0] - key[3] */
+
+void encipher(unsigned int num_rounds, uint32_t v[2], uint32_t const key[4]) {
+    unsigned int i;
+    uint32_t v0=v[0], v1=v[1], sum=0, delta=0x9E3779B9;
+    for (i=0; i < num_rounds; i++) {
+        v0 += (((v1 << 4) ^ (v1 >> 5)) + v1) ^ (sum + key[sum & 3]);
+        sum += delta;
+        v1 += (((v0 << 4) ^ (v0 >> 5)) + v0) ^ (sum + key[(sum>>11) & 3]);
     }
+    v[0]=v0; v[1]=v1;
+}
+
+void decipher(unsigned int num_rounds, uint32_t v[2], uint32_t const key[4]) {
+    unsigned int i;
+    uint32_t v0=v[0], v1=v[1], delta=0x9E3779B9, sum=delta*num_rounds;
+    for (i=0; i < num_rounds; i++) {
+        v1 -= (((v0 << 4) ^ (v0 >> 5)) + v0) ^ (sum + key[(sum>>11) & 3]);
+        sum -= delta;
+        v0 -= (((v1 << 4) ^ (v1 >> 5)) + v1) ^ (sum + key[sum & 3]);
+    }
+    v[0]=v0; v[1]=v1;
 }
 
 
@@ -162,20 +148,19 @@ int main()
     uint32_t flagLong[2];
     flagLong[0] = (uint32_t)htoi((char *)v1);
     flagLong[1] = (uint32_t)htoi((char *)v2);
-    // flagLong[2] = (uint32_t)htoi("12345678");
     // printf("%d",sizeof(int));  4 byte == 32 bit
     
-    // printf("加密前原始数据：%x %x %x\n",flagLong[0],flagLong[1],flagLong[2]);
-    btea(flagLong,2, k);
-    // printf("加密后的数据：%x %x %x\n",flagLong[0],flagLong[1],flagLong[2]);
+    // printf("加密前原始数据：%x %x\n",flagLong[0],flagLong[1]);
+    encipher(32,flagLong, k);
+    // printf("加密后的数据：%x %x\n",flagLong[0],flagLong[1]);
     // check flag
     uint8_t check_enc[4];
     uint8_t check_index[4] = {3,1,0,2};
     uint8_t i=0;
-    check_enc[0] = 0x57;
-    check_enc[1] = 0x8b;
-    check_enc[2] = 0x36;
-    check_enc[3] = 0x9b;
+    check_enc[0] = 0x8c;
+    check_enc[1] = 0xa2;
+    check_enc[2] = 0x26;
+    check_enc[3] = 0x46;
     for(i=0;i<4;i++){
         uint8_t t = (uint8_t)(flagLong[0]>>(8*i));
         // printf("%x\t",t);
@@ -184,8 +169,8 @@ int main()
         }
     }
 
-    char check_enc_last[9] = "6b45a63b";
-    // snprintf(check_enc_last,9,"%x",flagLong[1]);//b36a54b6
+    char check_enc_last[9] = "61ba69e3";
+    // snprintf(check_enc_last,9,"%x",flagLong[1]);//3e96ab16
     reverse(check_enc_last,0,7);
     uint32_t enc_hex = htoi(check_enc_last);
 
