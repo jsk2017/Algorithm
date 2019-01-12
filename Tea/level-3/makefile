@@ -10,3 +10,4 @@ clean:	*.o
 .PHONY:build
 build: $(SRC)
 	$(CC) $(CFLAGS) $^ -o $(OUT)
+	
