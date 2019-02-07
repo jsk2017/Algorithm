@@ -11,7 +11,7 @@
 >>> key = '12345678'
 >>> cipher = DES.new(key,DES.MODE_CBC,iv)
 >>> plain = 'This is plain!!!'
->>> ciphertext = cipher.encrypt(plain)
+>>> ciphertext = cipher.encrypt(plain
 >>> ciphertext
 '\xd8~\xa5\xaez\xd4(\xa9\x9c\xe21R\xae\xec6\x7f'
 >>> len(ciphertext)
