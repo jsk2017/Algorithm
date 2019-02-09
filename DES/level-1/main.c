@@ -343,14 +343,6 @@ int main(int argc, const char * argv[]) {
     // str2hex(in,in_hex,8);
 
     // printf("0x%s",in_hex);
-<<<<<<< HEAD
-
-    result = des(input, key, 'e');
-    printf ("E: 0x%016llx\n", result);//0x71d05d44594773b0
-    
-    //result = des(result, key, 'd');
-    //printf ("D: %016llx\n", result);
-=======
     char a[]="qwertyui";
     char * reset;
 
@@ -370,7 +362,6 @@ int main(int argc, const char * argv[]) {
 
     result = des(result, key, 'd');
     printf ("D: 0x%016llx\n", result);
->>>>>>> 8ec53edd40ecb0f0be43aa410f6e9792f615d05c
     
     exit(0);
     
