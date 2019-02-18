@@ -11,7 +11,7 @@ int main(void){
     idea_encrypt(plaintext[i], key, ciphertext);
     printf("0x%016llx\n", ciphertext[0]);
 
-    idea_decrypt(ciphertext[0], key, &(plaintext[i]));
+    idea_decrypt(ciphertext[0], key, &(plaintext[i])); 
     printf("0x%016llx\n", plaintext[0]);
     
 }
