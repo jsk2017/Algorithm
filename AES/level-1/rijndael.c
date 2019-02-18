@@ -309,7 +309,7 @@ int aes_encrypt(AES_CYPHER_T mode, uint8_t *data, int len, uint8_t *key)
                 // aes_dump("  sub", s, 4 * g_aes_nb[mode]);
                
                 /* do ShiftRows */
-                aes_shift_rows(mode, s);
+                // aes_shift_rows(mode, s);
                 // aes_dump("  shift", s, 4 * g_aes_nb[mode]);
                
                 if (nr < g_aes_rounds[mode]) {
@@ -490,7 +490,7 @@ int aes_decrypt(AES_CYPHER_T mode, uint8_t *data, int len, uint8_t *key)
 
                 /* do ShiftRows */
                 // aes_dump("  shift", s, 4 * g_aes_nb[mode]);
-                inv_shift_rows(mode, s);
+                // inv_shift_rows(mode, s);
 
                 /* do SubBytes */
                 // aes_dump("  sub", s, 4 * g_aes_nb[mode]);
