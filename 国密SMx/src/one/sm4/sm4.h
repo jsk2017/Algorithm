@@ -10,7 +10,7 @@ typedef unsigned long muint32;
 
 #define LITTLE_ENDIAN     //定义小端字节序
 //#define BIG_ENDIAN     //定义大端字节序
-#define SM4_ENCRYPT  0     //定义加密标志
+#define  0     //定义加密标志
 #define SM4_DECRYPT  1     //定义解密标志
 
 #define SM4_BLOCK_LEN	16
