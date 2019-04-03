@@ -1,0 +1,87 @@
+01/09/18 15:37:51 v1.34.5 @ JSK, 
+01/09/18 15:37:51 v1.34.5 @ JSK, ****************************
+01/09/18 15:37:51 v1.34.5 @ JSK, Starting factorization of 12751233068921660030612916837777215319379069282742136325030797062909672039089934934221239115485586280430590845472766049168697383450704700718782796213884777853521288190486273813470594846213362365214292304968173747351787497627548256390761835991421870385747500426523978371199522913178843735834456640845496344427395398489958112683630863655472157344730425041696114659641989881007569684657783143670345775421453015125096975736894328388304053351209164720711884543299538269782080125262879377841984490947037736073628163453677448757017879393251327788422188141054595457742661911138046885073801508554474982316067765454164812051813
+01/09/18 15:37:51 v1.34.5 @ JSK, using pretesting plan: normal
+01/09/18 15:37:51 v1.34.5 @ JSK, no tune info: using qs/gnfs crossover of 95 digits
+01/09/18 15:37:51 v1.34.5 @ JSK, ****************************
+01/09/18 15:37:51 v1.34.5 @ JSK, rho: x^2 + 3, starting 1000 iterations on C617
+01/09/18 15:37:51 v1.34.5 @ JSK, rho: x^2 + 2, starting 1000 iterations on C617
+01/09/18 15:37:51 v1.34.5 @ JSK, rho: x^2 + 1, starting 1000 iterations on C617
+01/09/18 15:37:51 v1.34.5 @ JSK, pm1: starting B1 = 150K, B2 = gmp-ecm default on C617
+01/10/18 17:38:17 v1.34.5 @ JSK, 
+01/10/18 17:38:17 v1.34.5 @ JSK, ****************************
+01/10/18 17:38:17 v1.34.5 @ JSK, Starting factorization of 87924348264132406875276140514499937145050893665602592992418171647042491658461
+01/10/18 17:38:17 v1.34.5 @ JSK, using pretesting plan: normal
+01/10/18 17:38:17 v1.34.5 @ JSK, no tune info: using qs/gnfs crossover of 95 digits
+01/10/18 17:38:17 v1.34.5 @ JSK, ****************************
+01/10/18 17:38:17 v1.34.5 @ JSK, rho: x^2 + 3, starting 1000 iterations on C77
+01/10/18 17:38:17 v1.34.5 @ JSK, rho: x^2 + 2, starting 1000 iterations on C77
+01/10/18 17:38:17 v1.34.5 @ JSK, rho: x^2 + 1, starting 1000 iterations on C77
+01/10/18 17:38:17 v1.34.5 @ JSK, pm1: starting B1 = 150K, B2 = gmp-ecm default on C77
+01/10/18 17:38:17 v1.34.5 @ JSK, current ECM pretesting depth: 0.00
+01/10/18 17:38:17 v1.34.5 @ JSK, scheduled 30 curves at B1=2000 toward target pretesting depth of 23.69
+01/10/18 17:38:17 v1.34.5 @ JSK, Finished 30 curves using Lenstra ECM method on C77 input, B1=2K, B2=gmp-ecm default
+01/10/18 17:38:17 v1.34.5 @ JSK, current ECM pretesting depth: 15.18
+01/10/18 17:38:17 v1.34.5 @ JSK, scheduled 74 curves at B1=11000 toward target pretesting depth of 23.69
+01/10/18 17:38:19 v1.34.5 @ JSK, Finished 74 curves using Lenstra ECM method on C77 input, B1=11K, B2=gmp-ecm default
+01/10/18 17:38:19 v1.34.5 @ JSK, current ECM pretesting depth: 20.24
+01/10/18 17:38:19 v1.34.5 @ JSK, scheduled 149 curves at B1=50000 toward target pretesting depth of 23.69
+01/10/18 17:38:35 v1.34.5 @ JSK, Finished 149 curves using Lenstra ECM method on C77 input, B1=50K, B2=gmp-ecm default
+01/10/18 17:38:35 v1.34.5 @ JSK, final ECM pretested depth: 23.72
+01/10/18 17:38:35 v1.34.5 @ JSK, scheduler: switching to sieve method
+01/10/18 17:38:35 v1.34.5 @ JSK, starting SIQS on c77: 87924348264132406875276140514499937145050893665602592992418171647042491658461
+01/10/18 17:38:35 v1.34.5 @ JSK, random seeds: 1309572769, 3391031893
+01/10/18 17:38:35 v1.34.5 @ JSK, ==== sieve params ====
+01/10/18 17:38:35 v1.34.5 @ JSK, n = 77 digits, 256 bits
+01/10/18 17:38:35 v1.34.5 @ JSK, factor base: 36160 primes (max prime = 919693)
+01/10/18 17:38:35 v1.34.5 @ JSK, single large prime cutoff: 78173905 (85 * pmax)
+01/10/18 17:38:35 v1.34.5 @ JSK, allocating 6 large prime slices of factor base
+01/10/18 17:38:35 v1.34.5 @ JSK, buckets hold 2048 elements
+01/10/18 17:38:35 v1.34.5 @ JSK, using 32k sieve core
+01/10/18 17:38:35 v1.34.5 @ JSK, sieve interval: 10 blocks of size 32768
+01/10/18 17:38:35 v1.34.5 @ JSK, polynomial A has ~ 10 factors
+01/10/18 17:38:35 v1.34.5 @ JSK, using multiplier of 1
+01/10/18 17:38:35 v1.34.5 @ JSK, using SPV correction of 19 bits, starting at offset 27
+01/10/18 17:38:35 v1.34.5 @ JSK, using SSE2 for trial division and x64 sieve scanning
+01/10/18 17:38:35 v1.34.5 @ JSK, using SSE4.1 enabled 32k sieve core
+01/10/18 17:38:35 v1.34.5 @ JSK, using SSE2 for resieving 13-16 bit primes
+01/10/18 17:38:35 v1.34.5 @ JSK, trial factoring cutoff at 91 bits
+01/10/18 17:38:35 v1.34.5 @ JSK, ==== sieving started (1 thread) ====
+01/10/18 17:40:42 v1.34.5 @ JSK, trial division touched 3011459 sieve locations out of 56891146240
+01/10/18 17:40:42 v1.34.5 @ JSK, 36307 relations found: 17988 full + 18319 from 193300 partial, using 86809 polys (358 A polys)
+01/10/18 17:40:42 v1.34.5 @ JSK, on average, sieving found 2.43 rels/poly and 1660.49 rels/sec
+01/10/18 17:40:42 v1.34.5 @ JSK, trial division touched 3011459 sieve locations out of 56891146240
+01/10/18 17:40:42 v1.34.5 @ JSK, ==== post processing stage (msieve-1.38) ====
+01/10/18 17:40:42 v1.34.5 @ JSK, begin with 211288 relations
+01/10/18 17:40:42 v1.34.5 @ JSK, reduce to 52327 relations in 2 passes
+01/10/18 17:40:43 v1.34.5 @ JSK, recovered 52327 relations
+01/10/18 17:40:43 v1.34.5 @ JSK, recovered 39386 polynomials
+01/10/18 17:40:43 v1.34.5 @ JSK, freed 13 duplicate relations
+01/10/18 17:40:43 v1.34.5 @ JSK, attempting to build 36294 cycles
+01/10/18 17:40:43 v1.34.5 @ JSK, found 36294 cycles in 1 passes
+01/10/18 17:40:43 v1.34.5 @ JSK, distribution of cycle lengths:
+01/10/18 17:40:43 v1.34.5 @ JSK,    length 1 : 17986
+01/10/18 17:40:43 v1.34.5 @ JSK,    length 2 : 18308
+01/10/18 17:40:43 v1.34.5 @ JSK, largest cycle: 2 relations
+01/10/18 17:40:43 v1.34.5 @ JSK, matrix is 36160 x 36294 (5.1 MB) with weight 1039955 (28.65/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, sparse part has weight 1039955 (28.65/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, filtering completed in 3 passes
+01/10/18 17:40:43 v1.34.5 @ JSK, matrix is 26470 x 26534 (4.1 MB) with weight 854247 (32.19/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, sparse part has weight 854247 (32.19/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, saving the first 48 matrix rows for later
+01/10/18 17:40:43 v1.34.5 @ JSK, matrix is 26422 x 26534 (3.4 MB) with weight 706817 (26.64/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, sparse part has weight 626024 (23.59/col)
+01/10/18 17:40:43 v1.34.5 @ JSK, matrix includes 64 packed rows
+01/10/18 17:40:43 v1.34.5 @ JSK, using block size 10613 for processor cache size 6144 kB
+01/10/18 17:40:43 v1.34.5 @ JSK, commencing Lanczos iteration
+01/10/18 17:40:43 v1.34.5 @ JSK, memory use: 3.1 MB
+01/10/18 17:40:44 v1.34.5 @ JSK, lanczos halted after 419 iterations (dim = 26418)
+01/10/18 17:40:44 v1.34.5 @ JSK, recovered 15 nontrivial dependencies
+01/10/18 17:40:44 v1.34.5 @ JSK, prp39 = 275127860351348928173285174381581152299
+01/10/18 17:40:44 v1.34.5 @ JSK, prp39 = 319576316814478949870590164193048041239
+01/10/18 17:40:44 v1.34.5 @ JSK, Lanczos elapsed time = 1.5750 seconds.
+01/10/18 17:40:44 v1.34.5 @ JSK, Sqrt elapsed time = 0.0370 seconds.
+01/10/18 17:40:44 v1.34.5 @ JSK, SIQS elapsed time = 128.8559 seconds.
+01/10/18 17:40:44 v1.34.5 @ JSK, 
+01/10/18 17:40:44 v1.34.5 @ JSK, 
+01/10/18 17:40:44 v1.34.5 @ JSK, Total factoring time = 147.2561 seconds

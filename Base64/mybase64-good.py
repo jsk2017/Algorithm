@@ -1,36 +1,7 @@
 # -*- coding:utf-8 -*-
-#decode base64
+import base64 
 decode="YnBpYW4gdOhlAO1vbmtleSJhbmQgYnBhZOxleSJ0aOUga2lua2Nqb3UgYXBlAOZyaWVuZPE="
 table='''IJKLMNOPABCDEFGHQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'''
-# print len(table)
-# x="".join(map(lambda x:bin(table.index(x))[2:].zfill(6),decode))#zfillÓÃÓÚÌî³ä
-# print x
-# appen=len(x)%8
-# for ap in range(8-appen):
-# 	x+='0'
-# print len(x)%8
-# # print x
-# res=[]
-# for i in range((len(x))/8):
-# 	res.append(chr(eval('0b'+x[i*8:(i+1)*8])))
-# print "".join(res)
-
-# #encode base64
-# en=[]
-# encode=[]
-# m="qxDYs0TOBKX2zvHurdfhv3vNsg1YvZw9"
-# for d in list(m):
-# 	en.append(bin(ord(d))[2:].zfill(8))
-# enc="".join(en)
-# appen=len(enc)%6
-# for ap in range(6-appen):
-# 	enc+='0'
-# print enc
-# for i in range((len(enc))/6):
-# 	encode.append(table[eval('0b'+enc[i*6:(i+1)*6])])
-# print "".join(encode)
-
-
 
 def mydecodeb64(enc):
 	enc=enc.replace("=","")
@@ -55,4 +26,23 @@ def myencodeb64(plain):
 	for i in range((len(plain))/6):
 		encode.append(table[eval('0b'+plain[i*6:(i+1)*6])])
 	return "".join(encode)
-print mydecodeb64(decode)
+
+# another base64
+
+
+def self_base64(s,flag):
+	from string import  maketrans
+	import base64 
+	fr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+	to = 'ABCyVPGHTJKLMNOFQRSIUEWDYZgbc8sfah1jklmnopqret5v0xX9wi234u67dz+/'
+	trans = maketrans(fr,to)
+	if flag == 1:#dec
+		res = base64.b64decode(s.translate(trans))
+	elif flag == 0:#enc
+		res = base64.b64encode(s.translate(trans))
+
+	return res
+
+
+s = "bWzXZSB3b3JrTHRvTGRvTQ=="
+print self_base64(s,1)

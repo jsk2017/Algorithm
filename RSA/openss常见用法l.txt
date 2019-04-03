@@ -1,0 +1,16 @@
+openssl rsa -pubin -inform PEM -text -modulus -in public.pem  用于将pem中的n和e参数解密  要使用管理员权限
+通过rsawp.py解密flag.enc得到flag.dec
+openssl rsautl -decrypt -in flag.enc -inkey private.pem -out flag.dec
+
+Public-Key: (256 bit)
+Modulus:
+    00:a4:10:06:de:fd:37:8b:73:95:b4:e2:eb:1e:c9:
+    bf:56:a6:1c:d9:c3:b5:a0:a7:35:28:52:1e:eb:2f:
+    b8:17:a7
+Exponent: 65537 (0x10001)
+Modulus=A41006DEFD378B7395B4E2EB1EC9BF56A61CD9C3B5A0A73528521EEB2FB817A7(这就是N值，找个在线的网站进行分解即可得到p,q)
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAKQQBt79N4tzlbTi6x7Jv1amHNnDtaCn
+NShSHusvuBenAgMBAAE=
+-----END PUBLIC KEY-----

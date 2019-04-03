@@ -1,0 +1,75 @@
+Mon Feb 05 15:10:35 2018  
+Mon Feb 05 15:10:36 2018  
+Mon Feb 05 15:10:36 2018  Msieve v. 1.53 (SVN 1005)
+Mon Feb 05 15:10:36 2018  random seeds: 15e1a590 cd1ba53e
+Mon Feb 05 15:10:36 2018  factoring 124215466155263887158578207417849791333991622976020337890124450640747173605363286363339327787117805680047045010421073855743273240002806083552658201525994363916162381683034183381298882117141961586648111672223037001336736571927177969762782972436709757799147439049715297969456930904827399981471833855770094194967 (309 digits)
+Mon Feb 05 15:10:37 2018  searching for 15-digit factors
+Mon Feb 05 15:10:38 2018  commencing quadratic sieve (309-digit input)
+Mon Feb 05 15:10:40 2018  using multiplier of 1
+Mon Feb 05 15:10:40 2018  using generic 32kb sieve core
+Mon Feb 05 15:10:40 2018  sieve interval: 400 blocks of size 32768
+Mon Feb 05 15:10:40 2018  processing polynomials in batches of 1
+Mon Feb 05 15:10:40 2018  using a sieve bound of 42887069 (1300000 primes)
+Mon Feb 05 15:10:40 2018  using large prime bound of 4294967295 (31 bits)
+Mon Feb 05 15:10:40 2018  using double large prime bound of 218437776016143360 (51-58 bits)
+Mon Feb 05 15:10:40 2018  using trial factoring cutoff of 58 bits
+Mon Feb 05 15:10:40 2018  fatal error: poly selection failed
+Mon Feb 05 15:12:07 2018  
+Mon Feb 05 15:12:07 2018  
+Mon Feb 05 15:12:07 2018  Msieve v. 1.53 (SVN 1005)
+Mon Feb 05 15:12:07 2018  random seeds: 01bbf368 36261309
+Mon Feb 05 15:12:07 2018  factoring 74207624142945242263057035287110983967646020057307828709587969646701361764263 (77 digits)
+Mon Feb 05 15:12:08 2018  searching for 15-digit factors
+Mon Feb 05 15:12:08 2018  commencing quadratic sieve (77-digit input)
+Mon Feb 05 15:12:08 2018  using multiplier of 7
+Mon Feb 05 15:12:08 2018  using generic 32kb sieve core
+Mon Feb 05 15:12:08 2018  sieve interval: 12 blocks of size 32768
+Mon Feb 05 15:12:08 2018  processing polynomials in batches of 17
+Mon Feb 05 15:12:08 2018  using a sieve bound of 921409 (36471 primes)
+Mon Feb 05 15:12:08 2018  using large prime bound of 92140900 (26 bits)
+Mon Feb 05 15:12:08 2018  using trial factoring cutoff of 26 bits
+Mon Feb 05 15:12:08 2018  polynomial 'A' values have 10 factors
+Mon Feb 05 15:14:00 2018  36668 relations (19758 full + 16910 combined from 186523 partial), need 36567
+Mon Feb 05 15:14:01 2018  begin with 206281 relations
+Mon Feb 05 15:14:01 2018  reduce to 51474 relations in 2 passes
+Mon Feb 05 15:14:01 2018  attempting to read 51474 relations
+Mon Feb 05 15:14:01 2018  recovered 51474 relations
+Mon Feb 05 15:14:01 2018  recovered 38469 polynomials
+Mon Feb 05 15:14:01 2018  attempting to build 36668 cycles
+Mon Feb 05 15:14:01 2018  found 36668 cycles in 1 passes
+Mon Feb 05 15:14:01 2018  distribution of cycle lengths:
+Mon Feb 05 15:14:01 2018     length 1 : 19758
+Mon Feb 05 15:14:01 2018     length 2 : 16910
+Mon Feb 05 15:14:01 2018  largest cycle: 2 relations
+Mon Feb 05 15:14:01 2018  matrix is 36471 x 36668 (5.3 MB) with weight 1096448 (29.90/col)
+Mon Feb 05 15:14:01 2018  sparse part has weight 1096448 (29.90/col)
+Mon Feb 05 15:14:01 2018  filtering completed in 3 passes
+Mon Feb 05 15:14:01 2018  matrix is 24988 x 25051 (4.0 MB) with weight 838225 (33.46/col)
+Mon Feb 05 15:14:01 2018  sparse part has weight 838225 (33.46/col)
+Mon Feb 05 15:14:01 2018  saving the first 48 matrix rows for later
+Mon Feb 05 15:14:01 2018  matrix includes 64 packed rows
+Mon Feb 05 15:14:01 2018  matrix is 24940 x 25051 (2.6 MB) with weight 610207 (24.36/col)
+Mon Feb 05 15:14:01 2018  sparse part has weight 437608 (17.47/col)
+Mon Feb 05 15:14:01 2018  commencing Lanczos iteration
+Mon Feb 05 15:14:01 2018  memory use: 2.6 MB
+Mon Feb 05 15:14:05 2018  lanczos halted after 396 iterations (dim = 24938)
+Mon Feb 05 15:14:05 2018  recovered 17 nontrivial dependencies
+Mon Feb 05 15:14:05 2018  p39 factor: 258631601377848992211685134376492365269
+Mon Feb 05 15:14:05 2018  p39 factor: 286924040788547268861394901519826758027
+Mon Feb 05 15:14:05 2018  elapsed time 00:01:58
+Mon Feb 05 15:14:25 2018  
+Mon Feb 05 15:14:25 2018  
+Mon Feb 05 15:14:25 2018  Msieve v. 1.53 (SVN 1005)
+Mon Feb 05 15:14:25 2018  random seeds: eafb61ac 2e13fb23
+Mon Feb 05 15:14:25 2018  factoring 124215466155263887158578207417849791333991622976020337890124450640747173605363286363339327787117805680047045010421073855743273240002806083552658201525994363916162381683034183381298882117141961586648111672223037001336736571927177969762782972436709757799147439049715297969456930904827399981471833855770094194967 (309 digits)
+Mon Feb 05 15:14:27 2018  searching for 15-digit factors
+Mon Feb 05 15:14:27 2018  commencing quadratic sieve (309-digit input)
+Mon Feb 05 15:14:29 2018  using multiplier of 1
+Mon Feb 05 15:14:29 2018  using generic 32kb sieve core
+Mon Feb 05 15:14:29 2018  sieve interval: 400 blocks of size 32768
+Mon Feb 05 15:14:29 2018  processing polynomials in batches of 1
+Mon Feb 05 15:14:29 2018  using a sieve bound of 42887069 (1300000 primes)
+Mon Feb 05 15:14:29 2018  using large prime bound of 4294967295 (31 bits)
+Mon Feb 05 15:14:29 2018  using double large prime bound of 218437776016143360 (51-58 bits)
+Mon Feb 05 15:14:29 2018  using trial factoring cutoff of 58 bits
+Mon Feb 05 15:14:29 2018  fatal error: poly selection failed
